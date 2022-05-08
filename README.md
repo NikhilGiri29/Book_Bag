@@ -1,5 +1,7 @@
 # LibraryMS
 
+[toc]
+
 ## Introduction
 Book Bag is a Library Management system built on FastApi. It contains 20 api endpoints to conduct all library activities. This is a complete LMS with all the necessary functionalties.
 
