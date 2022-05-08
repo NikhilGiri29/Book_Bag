@@ -5,6 +5,7 @@
    * [Introduction](#introduction)
    * [Technologies Used](#technologies-used)
    * [Installation](#installation)
+   * [Database Description](#database-description)
    * [API Description](#api-description)
       * [Books](#books)
          * [Get All Books](#get-all-books)
@@ -72,6 +73,36 @@ $ alembic upgrade head
 ```bash
 $ uvicorn app.main:app --reload
 ```
+
+## Database Description
+### Books
+| Column       | Type    | Primary Key | Nullable | Unique   | Default Value |
+|--------------|---------|-------------|----------|----------|---------------|
+| id           | Integer | True        | False    | True(pk) |      -        |
+| name         | String  | False       | False    | True     |      -        |
+| author       | String  | False       | False    | False    |      -        |
+| category     | String  | False       | False    | False    |      -        |
+| times_issued | Integer | False       | False    | False    |      0        |
+### Students
+| Column      | Type          | Primary Key | Nullable | Unique   | Default Value |
+|-------------|---------------|-------------|----------|----------|---------------|
+| id          | Integer       | True        | False    | True(pk) |      -        |
+| first_name  | String        | False       | False    | False    |      -        |
+| last_name   | String        | False       | False    | False    |      -        |
+| roll_number | String        | False       | False    | True     |      -        |
+| password    | Sting(Hashed) | False       | False    | False    | -             |
+| created-at  | TIMESTAMP     | False       | False    | False    |      now()    |
+### Inventory
+| Column  | Type    | Primary Key | Nullable | Unique   | Foreign Key     | Default Value |
+|---------|---------|-------------|----------|----------|-----------------|---------------|
+| book_id | Integer | True        | False    | True(pk) | True (books.id) | -             |
+| stock   | Integer | False       | False    | False    | -               | 0             |
+### Transactions
+| Column     | Type      | Primary Key | Nullable | Unique   | Foreign Key        | Default Value |
+|------------|-----------|-------------|----------|----------|--------------------|---------------|
+| book_id    | Integer   | True        | False    | True(pk) | True (books.id)    | -             |
+| student_id | Integer   | True        | False    | True(pk) | True (students.id) | -             |
+| issued_at  | TIMESTAMP | False       | False    | false    | -                  | now()         |
 
 ## API Description
 

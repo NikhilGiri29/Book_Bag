@@ -24,7 +24,7 @@ class Student(Base,BaseMixin):
     id = Column(Integer, primary_key=True, nullable = False)
     first_name = Column(String, nullable = False)
     last_name = Column(String, nullable = False)
-    roll_number = Column(String, nullable = False)
+    roll_number = Column(String, nullable = False, unique =True)
     password = Column(String, nullable=False)
     created_at = Column(TIMESTAMP(timezone=True),
                         nullable=False, default=func.now())
