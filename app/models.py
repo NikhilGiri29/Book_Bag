@@ -15,7 +15,7 @@ class Book(Base,BaseMixin):
     author = Column(String, nullable = False)
     category = Column(String, nullable = False)
     times_issued = Column(Integer,nullable = False,default = 0)
-    #Unique wali cheez
+    
     
 
 class Student(Base,BaseMixin):
@@ -34,7 +34,7 @@ class Inventory(Base,BaseMixin):
 
     book_id = Column(Integer, ForeignKey("books.id",ondelete="CASCADE"), primary_key = True,nullable = False)
     stock = Column(Integer,nullable = False, default = 0)
-    ## Currently Issued Field Bhi daal sakte
+    ## TODO: Add Number of Currently issed books
 
     book = relationship("Book",backref=backref("Inventory", cascade="all,delete") )
 
