@@ -1,6 +1,41 @@
 # LibraryMS
 
-[toc]
+##  Table Of Content
+* [LibraryMS](#libraryms)
+   * [Introduction](#introduction)
+   * [Technologies Used](#technologies-used)
+   * [Installation](#installation)
+         * [Clone this Repository](#clone-this-repository)
+         * [Create environment and Activate the environment](#create-environment-and-activate-the-environment)
+         * [Install All Dependencies](#install-all-dependencies)
+         * [Setup the Database](#setup-the-database)
+         * [Run the server locally](#run-the-server-locally)
+   * [API Description](#api-description)
+      * [Books](#books)
+         * [Get All Books](#get-all-books)
+         * [Get Books by Category](#get-books-by-category)
+         * [Get Books by Id](#get-books-by-id)
+         * [Get Top 5 Favourite Books](#get-top-5-favourite-books)
+         * [Create Book](#create-book)
+         * [Update Book](#update-book)
+         * [Delete Book](#delete-book)
+      * [Students](#students)
+         * [Get All Students](#get-all-students)
+         * [Get Student by Id](#get-student-by-id)
+         * [Add Student to Database](#add-student-to-database)
+         * [Update Student Contact info](#update-student-contact-info)
+         * [Delete Student From Database](#delete-student-from-database)
+      * [Inventory](#inventory)
+         * [Get Entire Inventory](#get-entire-inventory)
+         * [Get Book Inventory by Id](#get-book-inventory-by-id)
+         * [Update Inventory](#update-inventory)
+      * [Transaction](#transaction)
+         * [Get All Transactions](#get-all-transactions)
+         * [Get Tranactions by Book Id](#get-tranactions-by-book-id)
+         * [Get Tranactions by Student Id](#get-tranactions-by-student-id)
+         * [Issue Book](#issue-book)
+         * [Return book](#return-book)
+
 
 ## Introduction
 Book Bag is a Library Management system built on FastApi. It contains 20 api endpoints to conduct all library activities. This is a complete LMS with all the necessary functionalties.
